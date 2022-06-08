@@ -1,0 +1,62 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+            <div class="col-12">
+                <h3 class="fw-normal text-secondary fs-4 text-uppercase mb-4">Appointment form</h3>
+            </div>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <input type="date" class="form-control" placeholder="Enter Date"
+                        [(ngModel)]="Visite.date"
+
+                          name="date">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="time" class="form-control" placeholder="Enter Time"
+                        [(ngModel)]="Visite.time"
+
+                          name="time">
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-select" placeholder="Chose an item"
+                        [(ngModel)]="Visite.visitType"
+
+                          name="visitType">
+                            <option value="Direct">Direct</option>
+                            <option value="Virtual">Virtual</option>
+
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <select class="form-select" placeholder="Enter purpose"
+                        [(ngModel)]="Visite.purpose"
+
+                          name="purpose">
+                            <!-- <option selected>Purpose Of Appointment</option> -->
+                            <option value="1">Location</option>
+                            <option value="2">Achat</option>
+                            <option value="3">Renouvelle</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <textarea class="form-control" placeholder="Message"
+                        [(ngModel)]="Visite.message"
+                          name="message"></textarea>
+                    </div>
+                    <div class="col-12 mt-5">
+                        <button type="submit" (click)="onSubmit()" class="btn btn-primary float-end">Book Appointment</button>
+                        <button type="button" (click)="reloadCurrentPage()" class="btn btn-outline-secondary float-end me-2">Refresh</button>
+
+                    </div>
+                    <div *ngIf="this.imgAnc!=''">
+                      <img class="img-fluid" src="{{ this.imgAnc }}" alt=""
+                />
+                      {{message}}
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
